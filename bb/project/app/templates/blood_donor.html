@@ -1,0 +1,103 @@
+{% extends "index.html" %}
+{% block start %}
+
+{% block content %}
+<head>
+    <style type="text/css">
+        .top{
+            text-decoration: none;
+        }
+        li{
+            text-decoration: none;
+        }
+        a:hover{
+            /* text-shadow: 1px 1px 2px white, 0 0 25px white, 0 0 5px red; */
+            transition: 0.5s;
+            text-decoration:underline;
+        }
+        .box{
+            margin-top: 50px;
+            background-color: rgb(233, 189, 189);
+
+            border-radius: 5px;
+        }
+        .box:hover{
+            box-shadow: 5px 1px 30px -15px red;
+        }
+
+    </style>
+</head>
+<h2>🩸Donation makes our Nation better...</h2>
+<div class="top container-fluid col-md-12 row">
+    <h3>WHERE DO YOU WANNA DONATE YOUR VALUABLE BLOOD ?</h3>
+    <!-- <ul>
+        <li><input type="button" class="hosp" value="HOSPITAL"></li>
+        <li><a href="#">ORGANISATIONS</a></li>
+    </ul> -->
+</div>
+<!--
+    ------------hospital---------------
+-->
+<div class="box container-fluid col-md-12">
+    <div class="hos">
+        <h3 class="heading">TO HOSPITAL</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>HOSPITAL</th>
+                    <th>ADDRESS</th>
+                    <th>DATE POSTED</th>
+                    <th>CONTACT</th>
+                    <th>HOSPITAL EMAIL</th>
+                    <th>BLOOD NEEDED</th>
+                </tr>
+                <form method="POST" action={% url "donor_mail" %} > 
+                    {% csrf_token %}
+                {% for i in blood_donate_hos %}
+                <tr>
+                    <td>{{i.hos_name}}</td>
+                    <td>{{i.hos_place}}</td>
+                    <td>{{i.posted_date}}</td>
+                    <td>{{i.hos_contact}}</td>
+                    <td><input type="submit" for="hos_mail" name="hos_mail" value="{{i.hos_mail}}" readonly></td>
+                    <td><b>{{i.blood_need}}</b></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+<!--
+    ---------organisations----------------
+-->
+<div class="box container-fluid col-md-12">
+    <div class="organistaion">
+        <h3 class="heading">TO ORGANIZATION</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>HOSPITAL</th>
+                    <th>ADDRESS</th>
+                    <th>DATE POSTED</th>
+                    <th>CONTACT</th>
+                    <th>ORGANIZATION EMAIL</th>
+                    <th>BLOOD NEEDED</th>
+                </tr>
+                <tr>
+                    {% for i in blood_donate_org %}
+                    <td>{{i.org_name}}</td>
+                    <td>{{i.org_place}}</td>
+                    <td>{{i.posted_date}}</td>
+                    <td>{{i.org_contact}}</td>
+                    <td><input type="submit" for="hos_mail" name="hos_mail" value="{{i.org_mail}}" readonly></td>
+                    <td><b>{{i.blood_need}}</b></td>
+                    {% endfor %}
+                </tr>
+            </form>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% endblock start %}

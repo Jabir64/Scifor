@@ -1,0 +1,104 @@
+{% extends 'index.html' %}
+{% block start %}
+
+{% block content %}
+<head>
+    <style type="text/css">
+          body {
+            display: grid;
+            grid-gap: 0.2vw; /*Set the gap between grid items */
+    /* Define the columns (adjust as needed) */
+            grid-template-columns: 150px 1fr;
+            }
+            .main_container{
+                margin:90px 0 0 -70px;
+                text-align: center;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            .main_container2{
+                width: 150ch;
+            }
+            .card{
+                background-color:#c4c4c4;
+                width: 200px;
+                overflow: hidden;
+                
+            }
+            h1{
+                color: blue;
+            }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+<div class="main_container row container-fluid col-md-12">
+    <div class="col-md-3">                <!-- A+ -->
+        <div class="card">
+          <a class="a" href={% url "a_plus" %}>
+            <h1>A+ <br><br><br>🩸</h1>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3">                <!-- B+ -->
+        <div class="card">
+          <a class="a" href={% url "b_plus" %}>
+            <h1>B+ <br><br><br>🩸</h1>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-3">                <!--AB+ -->
+        <div class="card">
+          <a class="a" href={% url "ab_plus" %}>
+            <h1>AB+ <br><br><br>🩸</h1>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-3">                <!--O+ -->
+        <div class="card">
+          <a class="a" href={% url "o_plus" %}>
+            <h1>O+ <br><br><br>🩸</h1>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="main_container row container-fluid col-md-12">
+    <div class="col-md-3">                <!--A- -->
+        <div class="card">
+            <a class="a" href={% url "a_minus" %}>
+                <h1>A- <br><br><br>🩸</h1>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-3">                <!--B- -->
+        <div class="card">
+            <a class="a" href={% url "b_minus" %}>
+                <h1>B- <br><br><br>🩸</h1>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-3">                <!--AB- -->
+        <div class="card">
+            <a class="a" href={% url "ab_minus" %}>
+                <h1>AB- <br><br><br>🩸</h1>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-3">                <!--O- -->
+        <div class="card">
+            <a class="a" href={% url "o_minus" %}>
+                <h1>O- <br><br><br>🩸</h1>
+            </a>
+        </div>
+    </div>
+
+</div>
+</body>
+{% endblock %}
+
+{% endblock start %}

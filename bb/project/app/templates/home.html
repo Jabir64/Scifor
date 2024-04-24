@@ -1,0 +1,141 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+{% block start %}
+<!-- <div class="row">
+    {% if user.is_authenticated %}
+    <center><h3>welcome {{user.username}}!</h3></center>
+    {% else %}
+    {% endif %}
+</div> -->
+<html>
+<head>
+{% load static %}
+<link rel="stylesheet" href={% static 'css/index.css' %}>
+
+</head>
+{% block content %}
+<body>
+
+<div class="main container row">
+    <div class="col-md-4">                <!--CARD 1-->
+      <div class="card">
+        <a class="a" href={% url "blood_stocks" %}>
+            {% load static %}
+          <img class="card_img" src={% static "images/blood_avail.jpg" %} alt="Lights" style="width:100%; height: 230px;">
+          <div class="caption">
+            <h4>BLOOD AVAILABILITY</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">                <!--CARD 2-->
+        <div class="card">
+          <a class="a" href={% url "blood_donor" %}>
+            {% load static %}
+            <img class="card_img" src={% static "images/blood_donor.jpg" %} alt="Lights" style="width:100%; height: 230px;">
+            <div class="caption">
+              <h4>BLOOD DONOR</h4>
+            </div>
+          </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">                <!--CARD 3-->
+      <div class="card">
+        <a class="a" href={% url "need_blood" %} >
+            {% load static %}
+          <img class="card_img" src={% static "images/need_blood.jpg" %} alt="Lights" style="width:100%; height: 230px;">
+          <div class="caption">
+            <h4>NEED BLOOD</h4>
+          </div>
+        </a>
+      </div>
+  </div>
+</div>
+                                        <!--first container box-->
+<div class="row">
+<div class="content_main col-md-12">
+  <div class="container">
+    <h3 id="h3">DONATION STARTS FROM HERE...</h3>
+    <div class="content col-lg-12">Blood donation is a vital part of worldwide healthcare. It relates to blood transfusion as a life-sustaining and life-saving procedure as well as a form of therapeutic phlebotomy as a primary medical intervention. Over one hundred million units of blood are donated each year throughout the world. This article will concisely discuss a short history of blood donation origin and purpose, blood testing, donor eligibility and selection, adverse effects of donation, blood donation as a primary medical intervention, and a brief discussion of pathogen reduction and inactivation for donated blood. <br><br> Blood donation is most often performed by inserting a large bore needle (16G or 18G) into a peripheral vein, usually within the antecubital fossa. Veins on the dorsum of the hand or other prominent veins may be used in some individuals who do not have an otherwise easily accessible antecubital vein.Blood donation is most often performed by inserting a large bore needle (16G or 18G) into a peripheral vein, usually within the antecubital fossa. Veins on the dorsum of the hand or other prominent veins may be used in some individuals who do not have an otherwise easily accessible antecubital vein. <br><br>
+      Blood donation for transfusion is a vital step in the management of many clinical problems, with the two primary indications being anemia and acute blood loss. Blood donation itself is also used to primarily treat a small subset of medical conditions. At the beginning of the 20th century, Karl Landsteiner identified ABO blood groups, at which time blood typing of individuals was only beginning to be adopted as a universally standard practice.[2] Due to the inability to prevent blood from clotting once removed from the donor and thus store and transfer blood to be delivered when needed later, transfusions were only carried out on a limited basis. Blood was transfused directly from donor to recipient without intervening storage or transport. This method worked for small numbers of patients and only on a small scale, as donors and recipients needed to be connected both in time and space. There was a time when lists of donors were maintained of persons locally available to be called in to donate to patients at any time as needed. Necessity drove the development of more flexible donation and storage practices when World War I began. "On-demand" blood donation was not feasible for such a large scale effort. Soldiers were dying of otherwise non-fatal wounds due mainly to the inability to perform a timely blood transfusion.</div>
+  </div>
+</div>
+</div>
+
+<!--about us-->
+
+<div id="about_us">
+<div class="about_us container-fluid col-md-12" >
+  <div class="container" >
+    <h3 id="h3">ABOUT US</h3>
+    <img src={% static "images/main.jpg" %} alt="about_us" class="image col-md-4">
+    <div class="col"><p class="content">We are group of friends with highly passion about helping needy people, for that first we need to know who are the people getting suffer and where are they, so we decided to develop a website with user friendly and now we are running and maintaining more than 50 webpages that fetch people's request to feed them with desired needs.<br><br><mark>ABOUT THIS PAGE</mark><br><br>Our only aim is to benefits and deliver blood to people who are suffering from lack of blood cells.<br>Workflow-based web-enabled service-centric comprehensive IT solution for managing processes and services of an individual Blood Bank or Blood Bank attached to a Hospital. <br><br>
+
+      SaaS solution is based on a multi-tenant architecture and made available over Cloud Infrastructure. With this model, a single version of the application, with a single configuration (hardware, network, operating system), is proposed to be used by multiple Blood Banks ("tenants") across various states.</p></div>
+    </div>
+</div>
+
+<!--why donation-->
+<div class="row">
+<div class="why_d container-fluid col-md-12" >
+  <div class="container">
+    <h3>WHY <span class="edit">BLOOD DONATE</span> IS IMPORTANT?</h3>
+    <img src={% static "images/why_donate.jpg" %} alt="why donation" class="img_wd col-md-5">
+    <div class="content"><h4><b>WHY IS IT IMPORTANT TO DONATE BLOOD?</b></h4> 
+      About 328 million people currently live in the U.S. Each year, approximately 6.8 million people in the U.S donate blood. Annually, this adds up to about 13.6 million units of whole blood collected for donation in the U.S. The Red Cross provides about 40% of our nation’s blood and blood cell components to donors. Your blood donations are used for patients in need of surgery, cancer treatment and transfusions for blood loss from traumatic injuries. Want to know more about the blood supply in the U.S.? Visit the Facts About Blood Supply page.
+
+      <h4><b>WHY CANCER PATIENTS NEED BLOOD</b></h4>
+      For cancer patients, blood transfusions can act as a resource to implement platelets back into the body after heavy treatments such as chemo or radiation therapy.
+      
+      For cancer patients, blood cells that are made in the bone marrow are often at risk. This lack of blood cell production can cause chronic diseases over time which may affect organs such as the kidneys, spleen and liver.
+      
+      <h4><b>THE IMPORTANCE OF DIVERSITY IN THE BLOOD SUPPLY</b></h4>
+      Maintaining diversity in the blood supply is essential. Some blood types are quite rare and are likeliest to be found among people with shared ancestral origins. Visit our Blood and Diversity page for more information on the need for diversity in the blood supply.
+      
+      
+      <h4><b>WHY CMV NEGATIVE BLOOD IS IMPORTANCE</b></h4>
+      CMV is known as the cytomegalovirus. CMV is a flu-like virus to which an estimated 85% of adults in the United States will be exposed by the age of 40. This means that the majority of adults in the United States carry CMV antibodies. Unfortunately, these antibodies might pose a danger to particularly vulnerable patients. That’s why CMV-negative blood is preferred for use in some cases.
+      
+      In a medical setting, CMV-negative blood may be utilized for transfusions for pediatric-specific conditions for newborns and premature babies, as well as for immune-compromised adults.<br><br>
+      
+      <img src={% static "images/why_donate_2.jpg" %} alt="why_donate" class="img_wd_2 col-md-5">
+      <h4><b>BLOOD DONATION TYPES</b></h4>
+      Blood donations can yield a variety of blood products, including red cells, platelets and plasma. You may be most familiar with the typical whole blood donation drive seen at workplaces, schools and community events, but there are a few other ways to help give more life through the Red Cross.
+          
+      <h4><b>PLATELET DONATION VS PLASMA DONATION</b></h4>
+      Platelets help your body create clots to stop bleeding. Platelet donations are critical for patients who are fighting cancer, chronic diseases and traumatic injuries.
+      
+      The collection process is unique and a bit different than the whole blood donations, both arms are involved. One arm is used to send blood through the apheresis process using a sterile centrifuge. The centrifuge separates the red blood cells from the platelets. The heavier red cells sink to the bottom during the process. These red blood cells are returned to you through the other arm. It’s important to note that an appointment needs to be scheduled at a specific Red Cross donation center rather than at a mobile blood drive.
+      
+      <h4><b>PLASMA DONATION</b></h4>
+      During a plasma donation, called plasmapheresis, blood is drawn from one arm and sent to the centrifuge that separates out the plasma. The red blood cells and platelets are then returned to you in the same arm. Plasma is used to help patients with severe burns, cancer or other potentially life-threatening conditions.
+      
+      The Red Cross encourages donors with the AB blood type to donate plasma, as this is the universal plasma donor type. One donation provides up to four units of plasma for patients in need.
+      
+      As you can see, blood donations are one of the most important things you can do to help others in need. There is no substitute for blood, and it can’t be manufactured. Every day, blood donors help patients of all ages from all backgrounds.</div>
+  </div>
+</div>
+</div>
+
+<footer class="new_footer_area bg_color">
+  <div class="new_footer_top">
+      <div class="container">
+          <div class="row">
+
+          </div>
+      </div>
+      <div class="footer_bg">
+        <h5>CONTACT: +91 8110883675</h5>
+        <h5>FOR POSTING DETAILS ON SITE EMAIL:<a href="mailto:jabir25264@gmail.com">jabir25264@gmail.com</a></h5>
+          <!-- <div class="footer_bg_one"></div> -->
+          <div class="footer_bg_two"><p><b></b></p></div>
+      </div>
+  </div>
+ 
+</footer>
+</body>
+</html>
+{% endblock %}
+{% endblock start %}

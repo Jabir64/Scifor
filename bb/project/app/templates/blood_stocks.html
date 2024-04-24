@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+{% block start %}
+
+{% block content %}
+<div class="table-responsive">          
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>NAME</th>
+          <th>AGE</th>
+          <th>PHONE</th>
+          <th>PLACE</th>
+          <th>HOSPITAL</th>
+          <th>HOSPITAL CONTACT</th>
+          <th>HOSPITAL EMAIL</th>
+          <th>HOSPITAL ADDRESS</th>
+          <th>DATE UPLOADED</th>
+          <th>BLOOD GROUP</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for bloods in bloodStocks %}
+        <tr>
+          <td>{{bloods.id}}</td>
+          <td>{{bloods.name}}</td>
+          <td>{{bloods.age}}</td>
+          <td>{{bloods.phone}}</td>
+          <td>{{bloods.place}}</td>
+          <td>{{bloods.hospital}}</td>
+          <td>{{bloods.hospital_num}}</td>
+          <td>{{bloods.hospital_mail}}</td>
+          <td>{{bloods.hospital_add}}</td>
+          <td>{{bloods.date_uploaded}}</td>
+          <td><b>{{bloods.bloodGroup}}</b></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% endblock start %}

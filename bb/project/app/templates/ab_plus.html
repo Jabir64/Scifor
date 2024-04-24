@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block start %}
+{% block content %}
+<head>
+    <style type="text/css">
+        table{
+            border-radius: 5px;
+            margin-top:20px;
+        }
+    </style>
+</head>
+<table class="table table-striped bg-warning table-hover">
+    <thead>
+      <tr>
+        <th scope="col">NAME</th>
+        <th scope="col">AGE</th>
+        <th scope="col">PHONE</th>
+        <th scope="col">PLACE</th>
+        <th scope="col">HOSPITAL</th>
+        <th scope="col">HOSPITAL CONTACT</th>
+        <th scope="col">HOSPITAL EMAIL</th>
+        <th scope="col">HOSPITAL ADDRESS</th>
+        <th scope="col">DATE UPLOADED</th>
+        <th scope="col">BLOOD GROUP</th>
+      </tr>
+    </thead>
+    <tbody>
+       <form method="POST" action={% url "eml" %}>
+        {% csrf_token %}  
+        {% for i in a %}
+      <tr>
+        <td><input type="text" for="name" name="name" value="{{i.name}}" readonly></td>
+        <td>{{i.age}}</td>
+        <td><input type="phone" for="phone" name="phone" value="{{i.phone}}" readonly></td>
+        <td>{{i.place}}</td>
+        <td><input type="text" for="hos" name="hos" value="{{i.hospital}}" readonly></td>
+        <td>{{i.hospital_num}}</td>
+        <td><input type="submit" for="tomail" name="tomail" value="{{i.hospital_mail}}" readonly></td>
+        <td>{{i.hospital_add}}</td>
+        <td>{{i.date_uploaded}}</td>
+        <td><input type="text" for="bgrp" name="bgrp" value="{{i.bloodGroup}}" readonly></td>      
+        {% endfor %}
+      </tr>
+
+      </form>
+    </tbody>
+  </table>
+{% endblock %}
+{% endblock start %}
